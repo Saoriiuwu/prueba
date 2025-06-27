@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyzone - Página Principal</title>
+  <style>
+    @keyframes cambiarFondo {
+      0% { background-color: #ffffff; }     /* blanco */
+      50% { background-color: #ffc0cb; }    /* rosado */
+      100% { background-color: #a23fff64; }   /* lila */
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      /* background-color: #fff0f8; Eliminado para animación */
+      color: #8b0a59;
+      animation: cambiarFondo 10s infinite alternate;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #ffe8fc;
+      border-bottom: 2px solid #e84b82;
+    }
+
+    header div {
+      font-size: 28px;
+      font-weight: bold;
+      color: #d2268a;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #b0176e;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .banner {
+      text-align: center;
+      padding: 60px 20px;
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .titulo-cyzone {
+      font-size: 48px;
+      font-weight: bold;
+      background: linear-gradient(270deg, #d2268a, #8e44ad,#8e44ad);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: cambiarColor 4s ease infinite;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+    }
+
+    @keyframes cambiarColor {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .corazon-lila {
+      width: 30px;
+      height: 27px;
+      background-color: hsla(312, 64%, 42%, 0.773);
+      position: relative;
+      transform: rotate(-45deg);
+      animation: latir 1s infinite;
+    }
+
+    .corazon-lila::before,
+    .corazon-lila::after {
+      content: "";
+      width: 30px;
+      height: 27px;
+      background-color: hsla(312, 64%, 42%, 0.773);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .corazon-lila::before {
+      top: -15px;
+      left: 0;
+    }
+
+    .corazon-lila::after {
+      left: 15px;
+      top: 0;
+    }
+
+    @keyframes latir {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+    }
+
+    .parpadeo {
+      font-size: 24px;
+      color: purple;
+      animation: parpadear 1s infinite;
+      margin-top: 10px;
+    }
+
+    @keyframes parpadear {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .historia {
+      background-color: #ffe8fc;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .productos-destacados {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .producto {
+      background-color: white;
+      border: 2px solid #ffcce5;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .producto h3 {
+      color: #c71585;
+    }
+
+    .boton-interactivo {
+      background-color: rgb(255, 255, 255);
+      color: rgb(146, 0, 225);
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin: 10px;
+    }
+
+    .boton-interactivo:hover {
+      background-color: blueviolet;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      background-color: #ffe8fc;
+      padding: 20px;
+      color: #a0005a;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>Cyzone</div>
+    <nav>
+      <a href="#index">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="banner" id="inicio">
+    <h1 class="titulo-cyzone">
+      Bienvenida a Cyzone
+      <span class="corazon-lila"></span>
+    </h1>
+    <div class="parpadeo">Contigo para ti💖</div>
+  </section>
+
+  <section class="historia">
+    <h1>💋​¡Haz tu experiencia interactiva!💋​</h1>
+    <p>Explora nuestras categorías, descubre todos nuestros productos y siéntete libre de contactarnos. ¡Tu próxima experiencia Cyzone está a un clic!</p>
+
+    <button class="boton-interactivo" onclick="alert('Gracias por visitar nuestra web 💕')">
+      Haz click aqui💌​
+    </button>
+  </section>
+
+  <section id="productos">
+    <h2 style="text-align: center; color: #b0176e;">Productos Destacados</h2>
+    <div class="productos-destacados">
+      <div class="producto">
+        <img src="labial cyzone.png" alt="labial Cyzone" />
+        <h3>Labial Mate</h3>
+        <p>Color intenso y larga duración.</p>
+        <button class="boton-interactivo" onclick="alert('¡Añadido al carrito! 💋')">Añadir</button>
+      </div>
+      <div class="producto">
+        <img src="perfume.png" alt="Perfume Cyzone" />
+        <h3>Perfume Sweet Black</h3>
+        <p>Fragancia dulce con personalidad.</p>
+        <button class="boton-interactivo" onclick="alert('¡Añadido al carrito! 🌸')">Añadir</button>
+      </div>
+      <div class="producto">
+        <img src="sombra.png" alt="Sombra Cyzone" />
+        <h3>Sombras Cool</h3>
+        <p>Colores vibrantes para tu look diario.</p>
+        <button class="boton-interactivo" onclick="alert('¡Añadido al carrito! 🎨')">Añadir</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <p>Contáctanos: contacto@cyzone.com | Síguenos en redes sociales</p>
+  </footer>
+
+  <div class="corazon"></div>
+
+</body>
+</html>
